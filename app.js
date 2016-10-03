@@ -13,19 +13,30 @@ function addColor(){
 
 };
 $('.color').click(function(){
-	var truc = $(this).data('color');
-	$('body').css('backgroundColor',truc);
+	var bodyColor = $(this).data('color');
+
+	var t = checked();
+	console.log(t);
+	if(t){
+		$('.main').css('color',bodyColor);
+	}else{
+		$('body').css('backgroundColor',bodyColor);
+		
+	};
+
 
 });
 
+function checked(){
+
+	return $('#modify-texte').is(':checked');
+
+}
 
 
 
-if $('#modify-texte').click(function(){
 
 
-
-});
 
 addColor();
 
@@ -36,16 +47,3 @@ addColor();
 
 
 
-
-/* # Color Pairing
-
-## 1ere étape 
-Les boutons doivent avoir leur fond de la couleur qui se trouvve dans le
-data attribute data-color
-
-## 2e étape 
-Un click sur le bouton doit mettre cette couleur en fond
-
-## 3e étape
-quand la case #modify-texte est cochée, la couleur du texte
- doit etre modifiée */
